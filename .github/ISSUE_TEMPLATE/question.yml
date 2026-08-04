@@ -1,0 +1,42 @@
+name: Assessment question or blocker
+description: Ask for clarification, record an assumption or report a technical blocker.
+title: "[Question]: "
+labels:
+  - question
+body:
+  - type: input
+    id: candidate
+    attributes:
+      label: Candidate GitHub username
+      placeholder: your-github-username
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Requirement clarification
+        - Technical blocker
+        - Submission process
+        - Assumption for confirmation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Question or issue
+      description: Include enough detail to reproduce or understand the problem. Do not include secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: attempted
+    attributes:
+      label: What have you tried?
+      description: For a technical blocker, provide relevant commands and sanitised error output.
+  - type: textarea
+    id: assumption
+    attributes:
+      label: Proposed assumption
+      description: If work can continue with a reasonable assumption, state it here.
