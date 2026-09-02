@@ -4,8 +4,8 @@
 
 - Name: Aswin K
 - GitHub username: `aswin071`
-- Final commit SHA: To be recorded in the pull request after the final push
-- Screen-recording link: [FieldDesk demonstration](https://drive.google.com/file/d/1cGYLFGTlDG8oCBWiA_ZzA04c0smeo7So/view?usp=sharing)
+- Final commit SHA: 148e42b76dce318f84fbc3259c9e82d20ef14827
+- Screen-recording link: [FieldDesk demonstration](https://drive.google.com/file/d/1cGYLFGTlDG8oCBWiA_ZzA04c0smeo7So/view?usp=sharing) (1:00:30)
 
 ## Local setup
 
