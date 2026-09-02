@@ -12,6 +12,33 @@ FieldDesk is a fictional field-service application created solely for this asses
 4. Complete the [technical notes](candidate-submission/TECHNICAL_NOTES.md) and [AI usage disclosure](candidate-submission/AI_USAGE.md).
 5. Raise questions or blockers through a GitHub Issue in this repository.
 
+## Run the completed submission
+
+Docker Desktop with Docker Compose is required. From the repository root:
+
+```powershell
+Copy-Item .env.example .env
+docker compose up --build -d
+docker compose exec api python manage.py seed_fielddesk --reset-passwords
+docker compose ps
+Invoke-RestMethod http://localhost:8000/health/ready
+```
+
+Open the ERP frontend at `http://localhost:5173`. The API is available at `http://localhost:8000/api/v1/`. The seed command creates Northstar Maintenance and Harborview Services with Owner, Dispatcher and Technician accounts documented in [the technical notes](candidate-submission/TECHNICAL_NOTES.md).
+
+Run the verification suite with:
+
+```powershell
+docker compose exec api python manage.py makemigrations --check --dry-run
+docker compose exec api pytest -q
+docker compose exec api ruff check .
+docker compose exec frontend npm run test
+docker compose exec frontend npm run lint
+docker compose exec frontend npm run build
+```
+
+The implementation architecture and module specifications are indexed in [the FieldDesk design documentation](docs/README.md).
+
 ## Required stack
 
 - React or Next.js with TypeScript

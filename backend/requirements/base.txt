@@ -1,0 +1,10 @@
+Django>=5.2,<5.3
+djangorestframework>=3.16,<3.17
+djangorestframework-simplejwt>=5.5,<5.6
+django-cors-headers>=4.7,<5
+psycopg[binary]>=3.2,<4
+celery[redis]>=5.6,<5.7
+redis>=6,<7
+gunicorn>=23,<24
+uvicorn[standard]>=0.35,<1
+
